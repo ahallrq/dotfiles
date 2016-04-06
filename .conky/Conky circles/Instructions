@@ -1,0 +1,3 @@
+Create folder .conky in the home and paste conky_grey.lua inside.
+
+Paste .conkyrc in the home, and run .conkyrc

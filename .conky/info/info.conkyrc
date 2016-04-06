@@ -1,0 +1,3 @@
+conky.text = [[
+${execi 15 "/usr/bin/acpi" "-bt"}
+]]

@@ -1,0 +1,24 @@
+# Is i3wm or fluxbox running?
+if [ "$DESKTOP_SESSION" = "i3" ] || [ "$DESKTOP_SESSION" = "fluxbox" ]; 
+then
+	sleep 0.15 && xset s off -dpms &	
+
+	light-locker --no-late-locking --lock-on-suspend &
+
+	# Conky configs
+	conky -p 1 -d -c "$HOME/.conky/TeejeeTech/Process Panel" &
+
+	# Start compositor
+	compton &
+
+	# Set desktop bg
+	#sleep 0.15 && exec hsetroot -solid "#000000" &
+	sleep 0.25 && feh --bg-fill /home/andrew/Pictures/wallpaper.png &
+
+	# Set up Xresources
+	sleep 0.15 && [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources &
+
+	# Applications
+	redshift &
+
+fi
