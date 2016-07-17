@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.local/bin:."
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,6 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias nano="nano -w"
+alias emacs="emacs -nw"
+alias DOITNOWORIWILLFUCKINGENDYOU="sudo !!"
+alias py3="python3"
+alias jrnl=" jrnl"
 
 # Add mkdir -c switch - make directory and switch
 mkdir () {
@@ -92,3 +96,7 @@ mkdir () {
        (*)  command mkdir "$@";;
     esac
 }
+
+cdls() { cd "$@" && ls; }
+
+#cat .motd
