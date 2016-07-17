@@ -1,0 +1,26 @@
+[disk-root]
+command=echo $(df -Ph / | tail -1 | awk '{printf "  %s/%s (%.2f%%)\n", $3, $2, $3*100/$2}')
+interval=30
+color=#00FF00
+
+[cpu]
+#command=echo $(top -bn1 | grep load | awk '{printf "  %s%%", $(NF-2)*100}')
+command=echo $(mpstat 1 1 | awk '$12 ~ /[0-9.]+/ { printf "  %.2f%%", 100 - $12;exit }')
+interval=3
+color=#00FFFF
+
+[mem]
+command=echo $(free -m | awk 'NR==2{printf "  %s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }')
+interval=5
+color=#00FF00
+
+[music-ticker]
+command=python -u /home/andrew/scripts/musicticker/musicticker.py
+interval=persist
+format=json
+color=#00FFFF
+
+[time]
+command=date '+  %D   %T'
+interval=1
+color=#00FF00
