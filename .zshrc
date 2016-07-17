@@ -2,6 +2,8 @@ export ZSH=/home/andrew/.oh-my-zsh
 
 ZSH_THEME="candy"
 
+plugins=(git)
+
 # Yes I have the current dir in my PATH. No I couldn't care less about if it's unsecure.
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andrew/.local/bin:."
 
